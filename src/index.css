@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #120c5c;
+  height: 100%;
+  position: fixed;
+  top: -0.1px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scrollDown {
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+}
+
+.fullheight {
+  height: calc(var(--vh, 1vh) * 100);
+}
