@@ -11,9 +11,9 @@ const About = () => {
       variants={aboutMeAnimation}
       initial="hidden"
       animate="visible"
-      className=" section fp-auto-height  h-full md:h-[120vh] min-h-full md:min-h-screen bg-top mt-[-20vh] z-100 bg-cover  bg-[url('../src/assets/bottom_2.svg')]  bg-no-repeat flex justify-center items-center relative">
+      className=" section fp-auto-height  h-full md:h-[120vh] min-h-screen md:min-h-screen bg-top mt-[-20vh] z-100 bg-cover  bg-[url('../src/assets/bottom_2.svg')]  bg-no-repeat flex justify-center items-center relative">
       <div className="container">
-        <div className="flex justify-end items-center h-screen  ">
+        <div className="flex justify-end items-center h-auto md:h-screen  ">
           <motion.div
             variants={aboutMeParagraph}
             initial="hidden"

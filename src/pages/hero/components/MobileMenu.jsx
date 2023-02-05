@@ -18,7 +18,7 @@ const MobileMenu = ({ handleClick }) => {
       initial="hidden"
       animate="visible"
       exit="exit"
-      className="fixed  -right-0 mobile-fix   w-screen fullheight md:h-screen overflow-hidden touch-none bg-slate-900 bg-opacity-100 z-[100]  ">
+      className="fixed  -right-0 mobile-fix   w-screen fullheight h-full md:h-screen overflow-hidden touch-none bg-slate-900 bg-opacity-100 z-[100]  ">
       <nav className=" flex flex-col items-center justify-center h-full">
         {menu.map((item) => (
           <motion.li

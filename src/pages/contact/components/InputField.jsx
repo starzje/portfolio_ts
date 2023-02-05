@@ -8,7 +8,7 @@ const InputField = ({
   id,
   type,
   inputName,
-  pattern = "",
+  pattern,
   inputType = "text",
 }) => {
   return (

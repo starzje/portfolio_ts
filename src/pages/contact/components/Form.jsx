@@ -66,6 +66,7 @@ const Form = () => {
           inputName={"user_name"}
           labelFor={"name"}
           labelText={"Enter Your Name"}
+          pattern="^[a-zA-Z ]{2,30}$"
         />
         <InputField
           type={"email"}
@@ -75,7 +76,7 @@ const Form = () => {
           inputName={"user_email"}
           labelFor={"email"}
           labelText={"Enter Your Email"}
-          pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+          pattern="^[\w.-]+@([\w-]+\.)+[a-zA-Z]{2,4}$"
         />
         <InputField
           type={"text"}
@@ -86,6 +87,7 @@ const Form = () => {
           labelFor={"textarea"}
           labelText={"Enter Your Message"}
           inputType={"textarea"}
+          pattern="^[a-zA-Z ]{2,30}$"
         />
         <button className="rounded-lg bg-[#1F1CA1] hover:bg-[#2826b0] transition duration-300 py-3 font-bold text-white flex justify-center items-center gap-2">
           Send <RiMailSendLine />
