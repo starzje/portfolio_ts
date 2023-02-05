@@ -13,6 +13,7 @@ const mobileScreen = window.innerWidth < 768 ? true : false;
 
 const App = () => (
   <ReactFullpage
+    scrollBar={false}
     responsiveWidth={768}
     pluginWrapper={pluginWrapper}
     parallax={mobileScreen ? false : true}
