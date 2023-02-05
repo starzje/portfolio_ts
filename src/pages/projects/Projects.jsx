@@ -7,7 +7,7 @@ import SingleProject from "./components/SingleProject";
 const Projects = () => {
   return (
     <section
-      className="section relative fp-auto-height 
+      className="section static md:relative md:fp-auto-height 
     bg-bg-pattern  min-h-full  md:min-h-screen  bg-contain bg-left-top bg-no-repeat  ">
       <GithubCTA />
       <div className="flex h-full  md:h-screen ">
