@@ -27,14 +27,10 @@ const Projects = () => {
               liveLink="https://citalo-books.com"
               codeLink="https://github.com/starzje/blog_citalo"
               chatStack={blogAppStack}
-              image="./assets/citalobooks.png"
+              image="./assets/citalobooks.jpg"
               extraStack={
                 <li className="flex items-center  select-none gap-2 py-1 px-3 rounded-xl text-white bg-[rgba(107,77,255,0.17)] text-[0.75rem] md:text-[0.9rem] ">
-                  <img
-                    src="./assets/strapi.svg"
-                    alt="icon for strapi"
-                    className=" w-[12px]"
-                  />
+                  <img src="./assets/strapi.svg" alt="icon for strapi" className=" w-[12px]" />
                   <span>Strapi</span>
                 </li>
               }
@@ -47,14 +43,10 @@ const Projects = () => {
               liveLink="https://chattam.online"
               codeLink="https://github.com/starzje/ChatTam-Chat-App"
               chatStack={chatAppStack}
-              image="./assets/chattam.png"
+              image="./assets/chattam.jpg"
               extraStack={
                 <li className="flex items-center  select-none gap-2 py-1 px-3 rounded-xl text-white bg-[rgba(107,77,255,0.17)] text-[0.75rem] md:text-[0.9rem] ">
-                  <img
-                    src="./assets/fmotion.svg"
-                    alt="icon for framerMotion"
-                    className=" w-[12px]"
-                  />
+                  <img src="./assets/fmotion.svg" alt="icon for framerMotion" className=" w-[12px]" />
                   <span>FramerMotion</span>
                 </li>
               }
