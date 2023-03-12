@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import * as React from "react";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
@@ -16,27 +17,34 @@ const Form = () => {
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const idToast = toast.loading("Sending email...");
-    emailjs.sendForm("service_bgksymg", "template_ngfqrlm", form.current!, "GiCXUjozzVj_odgQA").then(
-      (result) => {
-        toast.update(idToast, {
-          render: "Email sent successfully. I will contact you soon.",
-          type: "success",
-          isLoading: false,
-          autoClose: 5000,
-        });
-        setEmail("");
-        setName("");
-        setMessage("");
-      },
-      (error) => {
-        toast.update(idToast, {
-          render: "Something went wrong",
-          type: "error",
-          isLoading: false,
-          autoClose: 5000,
-        });
-      }
-    );
+    emailjs
+      .sendForm(
+        "service_bgksymg",
+        "template_ngfqrlm",
+        form.current!,
+        "GiCXUjozzVj_odgQA"
+      )
+      .then(
+        (result) => {
+          toast.update(idToast, {
+            render: "Email sent successfully. I will contact you soon.",
+            type: "success",
+            isLoading: false,
+            autoClose: 5000,
+          });
+          setEmail("");
+          setName("");
+          setMessage("");
+        },
+        (error) => {
+          toast.update(idToast, {
+            render: "Something went wrong",
+            type: "error",
+            isLoading: false,
+            autoClose: 5000,
+          });
+        }
+      );
   };
 
   return (
@@ -48,14 +56,19 @@ const Form = () => {
         viewport={{ once: true }}
         ref={form}
         onSubmit={sendEmail}
-        className="flex w-full md:w-[25em] bg-gradient-to-r from-[#19126d] to-[#1a145c]  flex-col space-y-5 rounded-2xl mt-5  py-7 px-5 shadow-xl opacity-100 md:opacity-90">
-        <p className="text-white text-2xl  font-extralight">Send me a message.</p>
+        className="flex w-full md:w-[25em] bg-gradient-to-r from-[#19126d] to-[#1a145c]  flex-col space-y-5 rounded-2xl mt-5  py-7 px-5 shadow-xl opacity-100 md:opacity-90"
+      >
+        <p className="text-white text-2xl  font-extralight">
+          Send me a message.
+        </p>
         <InputField
           id={"name"}
           value={name}
-          onChange={(e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) =>
-            setName(e.target.value)
-          }
+          onChange={(
+            e:
+              | React.ChangeEvent<HTMLInputElement>
+              | React.ChangeEvent<HTMLTextAreaElement>
+          ) => setName(e.target.value)}
           inputName={"user_name"}
           labelFor={"name"}
           labelText={"Enter Your Name"}
@@ -64,9 +77,11 @@ const Form = () => {
         <InputField
           id={"email"}
           value={email}
-          onChange={(e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) =>
-            setEmail(e.target.value)
-          }
+          onChange={(
+            e:
+              | React.ChangeEvent<HTMLInputElement>
+              | React.ChangeEvent<HTMLTextAreaElement>
+          ) => setEmail(e.target.value)}
           inputName={"user_email"}
           labelFor={"email"}
           labelText={"Enter Your Email"}
@@ -75,9 +90,11 @@ const Form = () => {
         <InputField
           id={"textarea"}
           value={message}
-          onChange={(e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) =>
-            setMessage(e.target.value)
-          }
+          onChange={(
+            e:
+              | React.ChangeEvent<HTMLInputElement>
+              | React.ChangeEvent<HTMLTextAreaElement>
+          ) => setMessage(e.target.value)}
           inputName={"message"}
           labelFor={"textarea"}
           labelText={"Enter Your Message"}

@@ -1,5 +1,5 @@
 ## Portfolio Website
 
-Created with: React, TailwindCss, FramerMotion, Fullpage.js
+Created with: Typescript, React, TailwindCss, FramerMotion, Fullpage.js
 
 live: https://www.ivan-starcevic.com/

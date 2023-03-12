@@ -37,13 +37,18 @@ const Hero: React.FC<HeroProps> = ({ fullpageApi }) => {
       initial="hidden"
       animate="visible"
       className=" fp-bg  m-0 sm:fp-auto-height-responsive  static min-h-full md:min-h-screen  md:relative overflow-hidden md:overflow-y-scroll mobile-fix  section h-[100%] bg-[#120C5C] bg-hero-pattern2  bg-cover bg-center bg-no-repeat top-[0] bottom-0 left-0 right-0 lozad"
-      data-src="./assets/background_svg3.svg">
+      data-src="./assets/background_svg3.svg"
+    >
       <div className="fp-bg bg-hero-pattern2 bg-cover   2xl:bg-contain  bg-center 2xl:bg-center md:bg-right "></div>
       <div className="inline-block md:hidden absolute top-2 right-2 z-50 ">
         <Hamburger color="#fff" toggled={isOpen} toggle={setOpen} />
       </div>
       <div className="relative z-10">
-        <AnimatePresence>{isOpen && <MobileMenu handleClick={() => setOpen((prev) => !prev)} />}</AnimatePresence>
+        <AnimatePresence>
+          {isOpen && (
+            <MobileMenu handleClick={() => setOpen((prev) => !prev)} />
+          )}
+        </AnimatePresence>
       </div>
       <div className="container">
         <Header />
@@ -51,7 +56,12 @@ const Hero: React.FC<HeroProps> = ({ fullpageApi }) => {
           <CTA />
           <Buttons fullpageApi={fullpageApi} />
         </div>
-        <ScrollDownArrow fullpageApi={fullpageApi ? fullpageApi : { moveSectionDown: () => {} }} />
+        <ScrollDownArrow
+          fullpageApi={
+            // eslint-disable-next-line @typescript-eslint/no-empty-function
+            fullpageApi ? fullpageApi : { moveSectionDown: () => {} }
+          }
+        />
       </div>
     </motion.main>
   );

@@ -13,7 +13,13 @@ interface LazyImageProps {
 
 /** Lazy loading for images using lozad library */
 
-const LazyImage: React.FC<LazyImageProps> = ({ src, alt, variants, className, viewport }) => {
+const LazyImage: React.FC<LazyImageProps> = ({
+  src,
+  alt,
+  variants,
+  className,
+  viewport,
+}) => {
   const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {

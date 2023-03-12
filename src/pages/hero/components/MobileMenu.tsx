@@ -1,7 +1,12 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 // animations
-import { mobileNavSlider, mobileListItem, mobileButtonItem, githubIconAnimation } from "../../../helpers/animations";
+import {
+  mobileNavSlider,
+  mobileListItem,
+  mobileButtonItem,
+  githubIconAnimation,
+} from "../../../helpers/animations";
 import { menu } from "../../../constants/index";
 
 interface MobileMenuProps {
@@ -15,7 +20,8 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ handleClick }) => {
       initial="hidden"
       animate="visible"
       exit="exit"
-      className="fixed  -right-0 mobile-fix   w-screen fullheight h-full md:h-screen overflow-hidden touch-none bg-slate-900 bg-opacity-100 z-[100]  ">
+      className="fixed  -right-0 mobile-fix   w-screen fullheight h-full md:h-screen overflow-hidden touch-none bg-slate-900 bg-opacity-100 z-[100]  "
+    >
       <nav className=" flex flex-col items-center justify-center h-full">
         {menu.map((item) => (
           <motion.li
@@ -46,13 +52,15 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ handleClick }) => {
                 before:via-white
                 before:to-white
                 hover:before:w-full
-                hover:before:opacity-100">
+                hover:before:opacity-100"
+          >
             <motion.a
               layout
               key={item.id}
               href={item.link}
               className="text-white text-2xl font-bold uppercase tracking-widest "
-              onClick={handleClick}>
+              onClick={handleClick}
+            >
               {item.name}
             </motion.a>
           </motion.li>
@@ -65,7 +73,8 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ handleClick }) => {
           className="bg-[#1F1CA1] hover:bg-[#2826b0] inline-block font-semibold text-center text-2xl  py-2 px-5 text-white rounded-2xl tracking-wider"
           href="https://drive.google.com/file/d/1q8-ep4xgRsE7daMLPkjSGhSGPRNQhPBZ/view?usp=sharing"
           target="_blank"
-          rel="noreferrer">
+          rel="noreferrer"
+        >
           Download CV
         </motion.a>
         <motion.a
@@ -75,10 +84,12 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ handleClick }) => {
           whileInView="visible"
           className=" top-3 left-4 absolute z-100 "
           href="https://github.com/starzje"
-          target="_blank">
+          target="_blank"
+        >
           <motion.i
             layout
-            className="devicon-github-original text-4xl text-white hover:text-blue-600 transition duration-300"></motion.i>
+            className="devicon-github-original text-4xl text-white hover:text-blue-600 transition duration-300"
+          ></motion.i>
         </motion.a>
       </nav>
     </motion.div>

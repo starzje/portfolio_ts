@@ -27,7 +27,8 @@ const Buttons: React.FC<ButtonsProps> = ({ fullpageApi }) => {
       variants={buttonAnimation}
       initial="hidden"
       animate="visible"
-      className="flex gap-3 md:gap-5 flex-col md:flex-row md:p-0 px-0 md:px-10 justify-center items-center w-full md:w-[28em] mt-8 font-semibold text-[1.2rem]">
+      className="flex gap-3 md:gap-5 flex-col md:flex-row md:p-0 px-0 md:px-10 justify-center items-center w-full md:w-[28em] mt-8 font-semibold text-[1.2rem]"
+    >
       <motion.button
         whileHover={{
           scale: 1.03,
@@ -36,7 +37,8 @@ const Buttons: React.FC<ButtonsProps> = ({ fullpageApi }) => {
         }}
         whileTap={{ scale: 0.95 }}
         onClick={handleClickWork}
-        className="bg-[#1F1CA1]  py-2 px-5 text-white w-full tracking-wider rounded-xl">
+        className="bg-[#1F1CA1]  py-2 px-5 text-white w-full tracking-wider rounded-xl"
+      >
         SEE MY WORK
       </motion.button>
       <motion.button
@@ -47,7 +49,8 @@ const Buttons: React.FC<ButtonsProps> = ({ fullpageApi }) => {
         }}
         whileTap={{ scale: 0.95 }}
         onClick={handleClickHire}
-        className="bg-[#120C5C] py-2 px-5 text-white w-full tracking-wider rounded-xl">
+        className="bg-[#120C5C] py-2 px-5 text-white w-full tracking-wider rounded-xl"
+      >
         HIRE ME
       </motion.button>
     </motion.div>

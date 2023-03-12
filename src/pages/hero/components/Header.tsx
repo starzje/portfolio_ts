@@ -11,10 +11,16 @@ const Header = () => {
       variants={headerAnimation}
       initial="hidden"
       animate="visible"
-      className="h-[4em] flex  justify-between  items-center gap-10">
-      <span className="text-white font-extrabold tracking-wider cursor-default select-none">Ivan Starčević</span>
+      className="h-[4em] flex  justify-between  items-center gap-10"
+    >
+      <span className="text-white font-extrabold tracking-wider cursor-default select-none">
+        Ivan Starčević
+      </span>
       <nav className="hidden md:inline-block ml-auto">
-        <motion.ul layout className="flex space-x-7 text-[1.2rem] font-semibold">
+        <motion.ul
+          layout
+          className="flex space-x-7 text-[1.2rem] font-semibold"
+        >
           {menu.map((item) => (
             <li
               key={item.id}
@@ -40,7 +46,8 @@ const Header = () => {
                 before:via-white
                 before:to-white
                 hover:before:w-full
-                hover:before:opacity-100">
+                hover:before:opacity-100"
+            >
               <a key={item.id} href={item.link}>
                 {item.name}
               </a>
@@ -58,7 +65,8 @@ const Header = () => {
         className="bg-black   hidden md:flex font-semibold   py-2 px-5 text-white rounded-xl tracking-wider justify-center items-center gap-2"
         href="https://drive.google.com/file/d/1q8-ep4xgRsE7daMLPkjSGhSGPRNQhPBZ/view?usp=sharing"
         target="_blank"
-        rel="noreferrer">
+        rel="noreferrer"
+      >
         <AiOutlineCloudDownload className="text-lg" />
         Download CV
       </motion.a>
