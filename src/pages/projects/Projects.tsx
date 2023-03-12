@@ -1,15 +1,24 @@
-import * as React from "react"
+import * as React from "react";
 import { motion } from "framer-motion";
 import { blogAppStack, chatAppStack } from "../../constants";
 import { projectTitle } from "../../helpers/animations";
 import GithubCTA from "./components/GithubCTA";
 import SingleProject from "./components/SingleProject";
+import lozad from "lozad";
+
+const observer = lozad(".lozad", {
+  loaded: function (el) {
+    el.classList.add("fade");
+  },
+});
+observer.observe();
 
 const Projects = () => {
   return (
     <section
       className="section static md:relative md:fp-auto-height
-    bg-bg-pattern  min-h-full  md:min-h-screen  bg-contain bg-left-top bg-no-repeat  ">
+    bg-bg-pattern  min-h-full  md:min-h-screen  bg-contain bg-left-top bg-no-repeat lozad "
+      data-src="./assets/aside.png">
       <GithubCTA />
       <div className="flex h-full  md:h-screen ">
         <div className="container h-full flex flex-col justify-center   ">

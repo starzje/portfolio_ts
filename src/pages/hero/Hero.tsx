@@ -9,6 +9,14 @@ import CTA from "./components/CTA";
 import Buttons from "./components/Buttons";
 import ScrollDownArrow from "./components/ScrollDownArrow";
 import { fullpageApi } from "@fullpage/react-fullpage";
+import lozad from "lozad";
+
+const observer = lozad(".lozad", {
+  loaded: function (el) {
+    el.classList.add("fade");
+  },
+});
+observer.observe();
 
 interface HeroProps {
   fullpageApi?: fullpageApi;
@@ -28,7 +36,8 @@ const Hero: React.FC<HeroProps> = ({ fullpageApi }) => {
       variants={mainSectionAnimation}
       initial="hidden"
       animate="visible"
-      className=" fp-bg  m-0 sm:fp-auto-height-responsive  static min-h-full md:min-h-screen  md:relative overflow-hidden md:overflow-y-scroll mobile-fix  section h-[100%] bg-[#120C5C] bg-hero-pattern2  bg-cover bg-center bg-no-repeat top-[0] bottom-0 left-0 right-0 ">
+      className=" fp-bg  m-0 sm:fp-auto-height-responsive  static min-h-full md:min-h-screen  md:relative overflow-hidden md:overflow-y-scroll mobile-fix  section h-[100%] bg-[#120C5C] bg-hero-pattern2  bg-cover bg-center bg-no-repeat top-[0] bottom-0 left-0 right-0 lozad"
+      data-src="./assets/background_svg3.svg">
       <div className="fp-bg bg-hero-pattern2 bg-cover   2xl:bg-contain  bg-center 2xl:bg-center md:bg-right "></div>
       <div className="inline-block md:hidden absolute top-2 right-2 z-50 ">
         <Hamburger color="#fff" toggled={isOpen} toggle={setOpen} />

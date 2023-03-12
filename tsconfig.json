@@ -1,15 +1,14 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
-    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es6",
+    "module": "commonjs",
     "strict": true,
-    "noImplicitReturns": true,
-    "noImplicitAny": true,
-    "module": "es6",
+    "esModuleInterop": true,
+    "jsx": "react",
     "moduleResolution": "node",
-    "target": "es5",
-    "allowJs": true,
-    "jsx": "react"
+    "resolveJsonModule": true,
+    "sourceMap": true
   },
   "include": ["./src/**/*"]
 }

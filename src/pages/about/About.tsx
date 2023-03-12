@@ -1,6 +1,15 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 import { aboutMeAnimation, aboutMeParagraph, aboutMeImage } from "../../helpers/animations";
+import LazyImage from "../../hooks/useLazyLoadImg";
+import lozad from "lozad";
+
+const observer = lozad(".lozad", {
+  loaded: function (el) {
+    el.classList.add("fade");
+  },
+});
+observer.observe();
 
 const About = () => {
   return (
@@ -8,7 +17,8 @@ const About = () => {
       variants={aboutMeAnimation}
       initial="hidden"
       animate="visible"
-      className=" section md:fp-auto-height pt-20 pb-40 md:pb-0 md:pt-0 md:h-[120vh] min-h-full md:min-h-screen bg-top -mt-24 mt:0  md:mt-[-20vh] z-100 bg-cover  bg-[url('../src/assets/bottom_2.svg')]  bg-no-repeat flex justify-center items-center relative">
+      className=" section md:fp-auto-height pt-20 pb-40 md:pb-0 md:pt-0 md:h-[120vh] min-h-full md:min-h-screen bg-top -mt-24 mt:0  md:mt-[-20vh] z-100 bg-cover  bg-[url('../src/assets/bottom_2.svg')]  bg-no-repeat flex justify-center items-center relative lozad"
+      data-src="../src/assets/bottom_2.svg">
       <div className="container">
         <div className="flex justify-end items-center h-full md:h-screen  ">
           <motion.div variants={aboutMeParagraph} initial="hidden" whileInView="visible">
@@ -29,13 +39,13 @@ const About = () => {
         </div>
       </div>
       <div className="absolute bottom-0 left-0 right-0  ">
-        <motion.img
-          variants={aboutMeImage}
-          initial="hidden"
-          whileInView="visible"
+        <LazyImage
           viewport={{ once: true }}
-          className="w-full "
-          src="./assets/bottom_1_1.svg"></motion.img>
+          variants={aboutMeImage}
+          src="./assets/bottom_1_1.svg"
+          alt="example image"
+          className="w-full"
+        />
       </div>
     </motion.section>
   );
