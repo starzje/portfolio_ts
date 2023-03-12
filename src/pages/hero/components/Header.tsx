@@ -1,7 +1,6 @@
-import React from "react";
+import * as React from "react";
 import { motion } from "framer-motion";
 import { AiOutlineCloudDownload } from "react-icons/ai";
-import uuid4 from "uuid4";
 // animations
 import { headerAnimation } from "../../../helpers/animations";
 import { menu } from "../../../constants/index";
@@ -13,16 +12,12 @@ const Header = () => {
       initial="hidden"
       animate="visible"
       className="h-[4em] flex  justify-between  items-center gap-10">
-      <span className="text-white font-extrabold tracking-wider cursor-default select-none">
-        Ivan Starčević
-      </span>
+      <span className="text-white font-extrabold tracking-wider cursor-default select-none">Ivan Starčević</span>
       <nav className="hidden md:inline-block ml-auto">
-        <motion.ul
-          layout
-          className="flex space-x-7 text-[1.2rem] font-semibold">
+        <motion.ul layout className="flex space-x-7 text-[1.2rem] font-semibold">
           {menu.map((item) => (
             <li
-              key={uuid4()}
+              key={item.id}
               className="
                 inline-block
                 text-white
@@ -46,7 +41,7 @@ const Header = () => {
                 before:to-white
                 hover:before:w-full
                 hover:before:opacity-100">
-              <a key={uuid4()} href={item.link}>
+              <a key={item.id} href={item.link}>
                 {item.name}
               </a>
             </li>

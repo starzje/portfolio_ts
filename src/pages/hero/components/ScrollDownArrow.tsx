@@ -1,7 +1,13 @@
-import React from "react";
+import * as React from "react";
 import { motion } from "framer-motion";
 
-const ScrollDownArrow = ({ fullpageApi }) => {
+interface ScrollDownArrowProps {
+  fullpageApi: {
+    moveSectionDown: () => void;
+  };
+}
+
+const ScrollDownArrow: React.FC<ScrollDownArrowProps> = ({ fullpageApi }) => {
   return (
     <motion.p
       initial={{ y: 20 }}
@@ -10,7 +16,6 @@ const ScrollDownArrow = ({ fullpageApi }) => {
         duration: 1,
         delay: 1,
         repeatType: "reverse",
-
         repeat: Infinity,
       }}
       onClick={() => fullpageApi.moveSectionDown()}

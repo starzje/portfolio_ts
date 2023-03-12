@@ -1,12 +1,22 @@
-import React from "react";
+import * as React from "react";
 
-const InputField = ({
+export interface InputFieldProps {
+  onChange: (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => void;
+  value: string;
+  labelText: string;
+  labelFor: string;
+  id: string;
+  inputName: string;
+  pattern: string;
+  inputType?: "text" | "textarea" | "email";
+}
+
+const InputField: React.FC<InputFieldProps> = ({
   onChange,
   value,
   labelText,
   labelFor,
   id,
-  type,
   inputName,
   pattern,
   inputType = "text",
@@ -17,19 +27,17 @@ const InputField = ({
         {inputType === "textarea" ? (
           <textarea
             name={inputName}
-            type={type}
             id={id}
             className="border-1 peer block w-full appearance-none rounded-lg border border-indigo-700  bg-transparent px-2.5 pb-2.5 pt-3  text-white focus:border-blue-600 focus:outline-none focus:ring-0 "
             placeholder=" "
             onChange={onChange}
             value={value}
             required
-            pattern={pattern}
           />
         ) : (
           <input
             name={inputName}
-            type={type}
+            type={inputType}
             id={id}
             className="border-1 peer block w-full appearance-none rounded-lg border border-indigo-700  bg-transparent px-2.5 pb-2.5 pt-3  text-white focus:border-blue-600 focus:outline-none focus:ring-0 "
             placeholder=" "

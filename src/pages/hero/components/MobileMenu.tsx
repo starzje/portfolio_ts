@@ -1,19 +1,16 @@
-import React from "react";
+import * as React from "react";
 import { motion } from "framer-motion";
-import uuid4 from "uuid4";
 // animations
-import {
-  mobileNavSlider,
-  mobileListItem,
-  mobileButtonItem,
-  githubIconAnimation,
-} from "../../../helpers/animations";
+import { mobileNavSlider, mobileListItem, mobileButtonItem, githubIconAnimation } from "../../../helpers/animations";
 import { menu } from "../../../constants/index";
 
-const MobileMenu = ({ handleClick }) => {
+interface MobileMenuProps {
+  handleClick: () => void;
+}
+
+const MobileMenu: React.FC<MobileMenuProps> = ({ handleClick }) => {
   return (
     <motion.div
-      key={uuid4()}
       variants={mobileNavSlider}
       initial="hidden"
       animate="visible"
@@ -25,7 +22,7 @@ const MobileMenu = ({ handleClick }) => {
             variants={mobileListItem}
             initial="hidden"
             whileInView="visible"
-            key={uuid4()}
+            key={item.id}
             className="
                   mb-10
                 inline-block
@@ -52,7 +49,7 @@ const MobileMenu = ({ handleClick }) => {
                 hover:before:opacity-100">
             <motion.a
               layout
-              key={uuid4()}
+              key={item.id}
               href={item.link}
               className="text-white text-2xl font-bold uppercase tracking-widest "
               onClick={handleClick}>

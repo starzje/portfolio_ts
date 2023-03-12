@@ -1,11 +1,7 @@
-import React from "react";
+import * as React from "react";
 import { motion } from "framer-motion";
 // animations
-import {
-  titleAnimation,
-  subTitleAnimation,
-  paragraphAnimation,
-} from "../../../helpers/animations";
+import { titleAnimation, subTitleAnimation, paragraphAnimation } from "../../../helpers/animations";
 
 const CTA = () => {
   return (
@@ -17,10 +13,7 @@ const CTA = () => {
         className="text-[2rem] md:text-[3rem] uppercase font-extrabold leading-[40px] md:leading-[50px] ">
         Turn your ideas
         <br />{" "}
-        <motion.span
-          variants={subTitleAnimation}
-          initial="hidden"
-          animate="visible">
+        <motion.span variants={subTitleAnimation} initial="hidden" animate="visible">
           into reality
         </motion.span>
       </motion.h1>

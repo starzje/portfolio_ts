@@ -1,3 +1,4 @@
+import * as React from "react"
 import { motion } from "framer-motion";
 import { blogAppStack, chatAppStack } from "../../constants";
 import { projectTitle } from "../../helpers/animations";

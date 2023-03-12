@@ -1,3 +1,4 @@
+import * as React from "react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Pivot as Hamburger } from "hamburger-react";
@@ -7,8 +8,12 @@ import Header from "./components/Header";
 import CTA from "./components/CTA";
 import Buttons from "./components/Buttons";
 import ScrollDownArrow from "./components/ScrollDownArrow";
+import { fullpageApi } from "@fullpage/react-fullpage";
 
-const Hero = ({ fullpageApi }) => {
+interface HeroProps {
+  fullpageApi?: fullpageApi;
+}
+const Hero: React.FC<HeroProps> = ({ fullpageApi }) => {
   const [isOpen, setOpen] = useState(false);
 
   useEffect(() => {
@@ -29,11 +34,7 @@ const Hero = ({ fullpageApi }) => {
         <Hamburger color="#fff" toggled={isOpen} toggle={setOpen} />
       </div>
       <div className="relative z-10">
-        <AnimatePresence>
-          {isOpen && (
-            <MobileMenu handleClick={() => setOpen((prev) => !prev)} />
-          )}
-        </AnimatePresence>
+        <AnimatePresence>{isOpen && <MobileMenu handleClick={() => setOpen((prev) => !prev)} />}</AnimatePresence>
       </div>
       <div className="container">
         <Header />
@@ -41,7 +42,7 @@ const Hero = ({ fullpageApi }) => {
           <CTA />
           <Buttons fullpageApi={fullpageApi} />
         </div>
-        <ScrollDownArrow fullpageApi={fullpageApi} />
+        <ScrollDownArrow fullpageApi={fullpageApi ? fullpageApi : { moveSectionDown: () => {} }} />
       </div>
     </motion.main>
   );

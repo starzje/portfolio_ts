@@ -1,8 +1,27 @@
-import React from "react";
+import * as React from "react";
 import { motion } from "framer-motion";
 import { buttonAnimation } from "../../../helpers/animations";
 
-const Buttons = ({ fullpageApi }) => {
+interface ButtonsProps {
+  fullpageApi?: {
+    moveTo?: (section: string | number, slide: string | number) => void;
+    setLockAnchors?: (value: boolean) => void;
+  };
+}
+
+const Buttons: React.FC<ButtonsProps> = ({ fullpageApi }) => {
+  const handleClickWork = () => {
+    if (fullpageApi?.moveTo) {
+      fullpageApi.moveTo(3, 0);
+    }
+  };
+
+  const handleClickHire = () => {
+    if (fullpageApi?.moveTo) {
+      fullpageApi.moveTo(4, 0);
+    }
+  };
+
   return (
     <motion.div
       variants={buttonAnimation}
@@ -16,7 +35,7 @@ const Buttons = ({ fullpageApi }) => {
           transition: { duration: 0.3 },
         }}
         whileTap={{ scale: 0.95 }}
-        onClick={() => fullpageApi.moveTo(3)}
+        onClick={handleClickWork}
         className="bg-[#1F1CA1]  py-2 px-5 text-white w-full tracking-wider rounded-xl">
         SEE MY WORK
       </motion.button>
@@ -27,7 +46,7 @@ const Buttons = ({ fullpageApi }) => {
           transition: { duration: 0.3 },
         }}
         whileTap={{ scale: 0.95 }}
-        onClick={() => fullpageApi.moveTo(4)}
+        onClick={handleClickHire}
         className="bg-[#120C5C] py-2 px-5 text-white w-full tracking-wider rounded-xl">
         HIRE ME
       </motion.button>

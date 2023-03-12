@@ -1,13 +1,17 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import * as React from "react";
+import * as ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { AnimatePresence } from "framer-motion";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+const root = document.getElementById("root");
+if (!root) {
+  throw new Error("Cannot find root element");
+}
+
+ReactDOM.render(
   <React.StrictMode>
     <AnimatePresence mode="wait">
       <App />
@@ -24,5 +28,6 @@ root.render(
       draggable
       pauseOnHover
     />
-  </React.StrictMode>
+  </React.StrictMode>,
+  root
 );

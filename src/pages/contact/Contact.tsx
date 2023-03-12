@@ -1,3 +1,4 @@
+import * as React from "react";
 import { motion } from "framer-motion";
 import { contactTitle } from "../../helpers/animations";
 import Form from "./components/Form";

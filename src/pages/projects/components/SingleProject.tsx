@@ -1,10 +1,24 @@
+import * as React from "react";
 import { motion } from "framer-motion";
 import { FiExternalLink } from "react-icons/fi";
 import { BiCodeAlt } from "react-icons/bi";
 import TechStack from "./TechStack";
 import { projectDescription } from "../../../helpers/animations";
 
-const SingleProject = ({
+interface SingleProjectProps {
+  extraStack?: React.ReactNode;
+  title: string;
+  description: string;
+  liveLink: string;
+  codeLink: string;
+  chatStack: {
+    icon: string;
+    iconName: string;
+  }[];
+  image: string;
+}
+
+const SingleProject: React.FC<SingleProjectProps> = ({
   extraStack = false,
   title,
   description,
@@ -35,28 +49,18 @@ const SingleProject = ({
         href={liveLink}
         target="_blank"
         rel="noreferrer">
-        <img
-          src={image}
-          className="max-h-[7em] w-full object-cover rounded-t-2xl"
-          alt=""
-        />
+        <img src={image} className="max-h-[7em] w-full object-cover rounded-t-2xl" alt="" />
       </motion.a>
       <div className="flex-auto px-6 py-5">
         <span className="mb-2 flex items-center text-sm font-semibold">
           <ul className="flex flex-wrap gap-2 md:gap-2  ">
             {chatStack.map((tech) => (
-              <TechStack
-                icon={tech.icon}
-                iconName={tech.iconName}
-                key={tech.icon}
-              />
+              <TechStack icon={tech.icon} iconName={tech.iconName} key={tech.icon} />
             ))}
             {extraStack}
           </ul>
         </span>
-        <h3 className="mt-4 mb-3 text-xl font-semibold xl:text-2xl select-none">
-          {title}
-        </h3>
+        <h3 className="mt-4 mb-3 text-xl font-semibold xl:text-2xl select-none">{title}</h3>
         <p className="mb-4 text-base font-light select-none">{description}</p>
         <div className="flex flex-col md:flex-row gap-3 md:gap-10 items-center mt-8">
           <motion.a
