@@ -71,7 +71,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ handleClick }) => {
           initial="hidden"
           whileInView="visible"
           className="bg-[#1F1CA1] hover:bg-[#2826b0] inline-block font-semibold text-center text-2xl  py-2 px-5 text-white rounded-2xl tracking-wider"
-          href="https://drive.google.com/file/d/1q8-ep4xgRsE7daMLPkjSGhSGPRNQhPBZ/view?usp=sharing"
+          href="https://drive.google.com/file/d/1e1XZPCtOhnSQbyZ3CVly3BSovwVql7vo/view?usp=share_link"
           target="_blank"
           rel="noreferrer"
         >
