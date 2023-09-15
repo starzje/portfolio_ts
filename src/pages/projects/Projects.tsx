@@ -1,6 +1,6 @@
 import * as React from "react";
 import { motion } from "framer-motion";
-import { blogAppStack, chatAppStack } from "../../constants";
+import { blogAppStack } from "../../constants";
 import { projectTitle } from "../../helpers/animations";
 import GithubCTA from "./components/GithubCTA";
 import SingleProject from "./components/SingleProject";
