@@ -19,7 +19,7 @@ const Form = () => {
     const idToast = toast.loading("Sending email...");
     emailjs
       .sendForm(
-        "service_bgksymg",
+        "service_ge5jyej",
         "template_ngfqrlm",
         form.current!,
         "GiCXUjozzVj_odgQA"
